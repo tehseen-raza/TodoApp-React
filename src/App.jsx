@@ -21,7 +21,7 @@ function App() {
 
   const formSubmitted = (e) => {
     e.preventDefault();
-    text ? setTask([...task, text]) : alert('Please Add Your First Todo')
+    text ? setTask([...task, text]) : alert('Please Add Your Todo')
     setText('')
   }
 
@@ -64,7 +64,7 @@ function App() {
                 task.map((val, ind) => {
                   return (
                     <>
-                      <div className="col-6 my-2 my-auto">{val}</div>
+                      <div className="col-6 my-2 my-auto" key={ind}>{val}</div>
                       <div className="col-6 my-2 text-end">
                         <button type="button" onClick={() => removeTask(ind)} className="btn btn-danger">
                           Delete
